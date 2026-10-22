@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <h1><%= title %></h1>
+        <p>Colorimetry Demonstration</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Sample Information</h2>
+
+            <p><strong>Sample ID:</strong> <%= sampleId %></p>
+
+            <p><strong>Analysis Method:</strong> Color reference comparison</p>
+        </section>
+
+        <section class="card">
+            <h2>Estimated Readings</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Estimated Reading</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% results.forEach(function(result) { %>
+                        <tr>
+                            <td><%= result.parameter %></td>
+                            <td><%= result.reading %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+
+            <p class="notice">
+                These are illustrative values, not actual measurements
+                from a urine sample.
+            </p>
+
+            <a class="button" href="/">Back to Home</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>FSDL Experiment 5 - EJS Template Demonstration</p>
+    </footer>
+
+</body>
+</html>
